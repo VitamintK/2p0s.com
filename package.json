@@ -1,0 +1,13 @@
+{
+  "name": "2p0s-com",
+  "version": "1.0.0",
+  "description": "Repository of two-player zero-sum game research",
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

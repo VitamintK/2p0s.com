@@ -1,0 +1,14 @@
+{
+  "slug": "leduc-poker",
+  "name": "Leduc Poker",
+  "description": "A poker game with a 6-card deck (J, Q, K in two suits), two rounds of betting, and a public community card revealed between rounds.",
+  "nash_value": null,
+  "algorithms": [],
+  "uniform_random": {
+    "ev_p0": -0.078125,
+    "ev_p1": 0.078125,
+    "exploitability": 2.373611111111111,
+    "ev_p0_vs_br": -2.659722222222222,
+    "ev_p1_vs_br": -2.0875
+  }
+}

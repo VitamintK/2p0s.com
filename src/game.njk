@@ -1,0 +1,53 @@
+---
+pagination:
+  data: games
+  size: 1
+  alias: game
+permalink: "games/{{ game.slug }}/index.html"
+layout: base.njk
+eleventyComputed:
+  title: "{{ game.name }}"
+---
+
+<h1>{{ game.name }}</h1>
+<p>{{ game.description }}</p>
+
+<h2>Game Properties</h2>
+<table>
+  <thead><tr><th>Property</th><th>Value</th></tr></thead>
+  <tbody>
+    <tr><td>Information states</td><td>{{ game.info_states if game.info_states else "—" }}</td></tr>
+    <tr><td>Actions per state</td><td>{{ game.num_actions if game.num_actions else "—" }}</td></tr>
+    <tr><td>Nash equilibrium value (P1)</td><td>{{ game.nash_value if game.nash_value else "—" }}</td></tr>
+  </tbody>
+</table>
+
+{% if game.uniform_random %}
+<h2>Uniform Random Policy</h2>
+<table>
+  <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+  <tbody>
+    <tr><td>EV (P1)</td><td>{{ game.uniform_random.ev_p0 | round(6) }}</td></tr>
+    <tr><td>EV (P2)</td><td>{{ game.uniform_random.ev_p1 | round(6) }}</td></tr>
+    <tr><td>Exploitability</td><td>{{ game.uniform_random.exploitability | round(6) }}</td></tr>
+    <tr><td>EV vs. best response (P1)</td><td>{{ game.uniform_random.ev_p0_vs_br | round(6) }}</td></tr>
+    <tr><td>EV vs. best response (P2)</td><td>{{ game.uniform_random.ev_p1_vs_br | round(6) }}</td></tr>
+  </tbody>
+</table>
+{% endif %}
+
+{% if game.algorithms and game.algorithms.length %}
+<h2>Algorithm Convergence</h2>
+<table>
+  <thead><tr><th>Algorithm</th><th>Iterations</th><th>Exploitability</th></tr></thead>
+  <tbody>
+  {% for row in game.algorithms %}
+    <tr>
+      <td>{{ row.name }}</td>
+      <td>{{ row.iterations }}</td>
+      <td>{{ row.exploitability if row.exploitability != null else "—" }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}

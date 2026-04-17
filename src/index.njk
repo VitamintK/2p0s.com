@@ -1,0 +1,27 @@
+---
+layout: base.njk
+title: Home
+---
+
+<h1>Two-Player Zero-Sum Games</h1>
+<p>WIP</p>
+
+<h2>Games</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      {# <th>Information states</th>
+      <th>Actions</th> #}
+    </tr>
+  </thead>
+  <tbody>
+  {% for game in games %}
+    <tr>
+      <td><a href="/games/{{ game.slug }}/">{{ game.name }}</a></td>
+      {# <td>{{ game.data.info_states }}</td>
+      <td>{{ game.data.num_actions }}</td> #}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

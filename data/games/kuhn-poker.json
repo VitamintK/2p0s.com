@@ -1,0 +1,32 @@
+{
+  "slug": "kuhn-poker",
+  "name": "Kuhn Poker",
+  "description": "A simplified poker game with a 3-card deck, one round of betting, and a single raise option.",
+  "info_states": 12,
+  "num_actions": 2,
+  "nash_value": "-1/18",
+  "algorithms": [
+    {
+      "name": "CFR",
+      "iterations": 100,
+      "exploitability": null
+    },
+    {
+      "name": "CFR",
+      "iterations": 1000,
+      "exploitability": null
+    },
+    {
+      "name": "CFR+",
+      "iterations": 100,
+      "exploitability": null
+    }
+  ],
+  "uniform_random": {
+    "ev_p0": 0.12500000000000003,
+    "ev_p1": -0.12500000000000003,
+    "exploitability": 0.4583333333333333,
+    "ev_p0_vs_br": -0.41666666666666663,
+    "ev_p1_vs_br": -0.5
+  }
+}
