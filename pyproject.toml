@@ -3,5 +3,15 @@ name = "2p0s-scripts"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
+    "cvxpy>=1.9.2",
     "open_spiel",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["scripts"]
+testpaths = ["scripts/tests"]

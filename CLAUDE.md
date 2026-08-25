@@ -2,6 +2,8 @@
 
 Research reference site for two-player zero-sum games.
 
+Do not write any copy without explicit instruction. Do not do any styling without explicit instruction.
+
 ## Stack
 
 - **Static site:** Eleventy (11ty) — source in `src/`, output to `_site/`

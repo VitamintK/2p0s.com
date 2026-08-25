@@ -16,6 +16,9 @@ eleventyComputed:
 <table>
   <thead><tr><th>Property</th><th>Value</th></tr></thead>
   <tbody>
+    <tr><td>Histories (terminals and chance histories included)</td><td>{{ game.num_histories.all if game.num_histories else "—" }}</td></tr>
+    {# <tr><td>Min payoff</td><td>{{ game.payoff_range.min if game.payoff_range else "—" }}</td></tr> #}
+    <tr><td>Max payoff</td><td>{{ game.payoff_range.max if game.payoff_range else "—" }}</td></tr>
     <tr><td>Information states</td><td>{{ game.info_states if game.info_states else "—" }}</td></tr>
     <tr><td>Actions per state</td><td>{{ game.num_actions if game.num_actions else "—" }}</td></tr>
     <tr><td>Nash equilibrium value (P1)</td><td>{{ game.nash_value if game.nash_value else "—" }}</td></tr>
@@ -28,7 +31,7 @@ eleventyComputed:
   <thead><tr><th>Metric</th><th>Value</th></tr></thead>
   <tbody>
     <tr><td>EV (P1)</td><td>{{ game.uniform_random.ev_p0 | round(6) }}</td></tr>
-    <tr><td>EV (P2)</td><td>{{ game.uniform_random.ev_p1 | round(6) }}</td></tr>
+    {# <tr><td>EV (P2)</td><td>{{ game.uniform_random.ev_p1 | round(6) }}</td></tr> #}
     <tr><td>Exploitability</td><td>{{ game.uniform_random.exploitability | round(6) }}</td></tr>
     <tr><td>EV vs. best response (P1)</td><td>{{ game.uniform_random.ev_p0_vs_br | round(6) }}</td></tr>
     <tr><td>EV vs. best response (P2)</td><td>{{ game.uniform_random.ev_p1_vs_br | round(6) }}</td></tr>
