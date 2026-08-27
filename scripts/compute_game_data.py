@@ -109,3 +109,4 @@ def compute_and_save(spiel_name: str, slug: str) -> None:
 if __name__ == "__main__":
     compute_and_save("kuhn_poker", "kuhn-poker")
     compute_and_save("leduc_poker", "leduc-poker")
+    compute_and_save("liars_dice", "liars-dice")

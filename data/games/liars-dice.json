@@ -1,0 +1,22 @@
+{
+  "slug": "liars-dice",
+  "name": "Liar's Dice",
+  "algorithms": [],
+  "payoff_range": {
+    "min": -1.0,
+    "max": 1.0
+  },
+  "num_histories": {
+    "all": 294883,
+    "decision_terminal": 294876,
+    "decision": 147456
+  },
+  "nash_value": -0.027131782945736392,
+  "uniform_random": {
+    "ev_p0": -0.0324074074074074,
+    "ev_p1": 0.0324074074074074,
+    "exploitability": 0.7807443231922397,
+    "ev_p0_vs_br": -0.7659970238095236,
+    "ev_p1_vs_br": -0.7954916225749558
+  }
+}
