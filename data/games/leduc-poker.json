@@ -19,5 +19,10 @@
   "payoff_range": {
     "min": -13.0,
     "max": 13.0
+  },
+  "info_states": {
+    "p1": 468,
+    "p2": 468,
+    "total": 936
   }
 }

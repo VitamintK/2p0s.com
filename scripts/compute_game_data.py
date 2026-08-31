@@ -76,6 +76,17 @@ def compute_and_save(spiel_name: str, slug: str) -> None:
         "decision": len(get_all_states(game, include_terminals=False, include_chance_states=False)),
     }
 
+    decision_states = get_all_states(game, include_terminals=False, include_chance_states=False)
+    info_states_p0 = {state.information_state_string(0) for state in decision_states.values()
+                       if state.current_player() == 0}
+    info_states_p1 = {state.information_state_string(1) for state in decision_states.values()
+                       if state.current_player() == 1}
+    data["info_states"] = {
+        "p1": len(info_states_p0),
+        "p2": len(info_states_p1),
+        "total": len(info_states_p0) + len(info_states_p1),
+    }
+
     # --- Nash equilibrium value (skip if already set, e.g. a known exact
     # fraction entered by hand) ---
     if data.get("nash_value") is None:
@@ -99,6 +110,8 @@ def compute_and_save(spiel_name: str, slug: str) -> None:
     json_path.write_text(json.dumps(data, indent=2) + "\n")
 
     print(f"{data['name']}:")
+    print(f"  Info states:    P1={data['info_states']['p1']}, P2={data['info_states']['p2']}, "
+          f"total={data['info_states']['total']}")
     print(f"  Nash value:     {data['nash_value']}")
     print(f"  EV:             P0={ev[0]:+.6f}, P1={ev[1]:+.6f}")
     print(f"  Exploitability: {nc.nash_conv / 2:.6f}")
