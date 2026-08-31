@@ -18,9 +18,16 @@ eleventyComputed:
   <tbody>
     <tr><td>Histories (terminals and chance histories included)</td><td>{{ game.num_histories.all if game.num_histories else "—" }}</td></tr>
     <tr><td>Payoff range (min/max for P1)</td><td>{{ game.payoff_range.min if game.payoff_range else "—" }} / {{ game.payoff_range.max if game.payoff_range else "—" }}</td></tr>
-    <tr><td>Information states (P1)</td><td>{{ game.info_states.p1 if game.info_states else "—" }}</td></tr>
-    <tr><td>Information states (P2)</td><td>{{ game.info_states.p2 if game.info_states else "—" }}</td></tr>
-    <tr><td>Information states (total)</td><td>{{ game.info_states.total if game.info_states else "—" }}</td></tr>
+    <tr>
+      <td>Information states <span class="tag-1">P1</span> <span class="tag-2">P2</span> <span class="tag-total">total</span></td>
+      <td>
+        {% if game.info_states %}
+        <span class="tag-1">{{ game.info_states.p1 }}</span> <span class="tag-2">{{ game.info_states.p2 }}</span> <span class="tag-total">{{ game.info_states.total }}</span>
+        {% else %}
+        —
+        {% endif %}
+      </td>
+    </tr>
     <tr><td>Actions per state</td><td>{{ game.num_actions if game.num_actions else "—" }}</td></tr>
     <tr><td>Nash equilibrium value (P1)</td><td>{{ game.nash_value if game.nash_value else "—" }}</td></tr>
   </tbody>

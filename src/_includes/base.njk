@@ -7,6 +7,11 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; }
 
+    :root {
+      --color-1: #dc2626;
+      --color-2: #2563eb;
+    }
+
     body {
       font-family: system-ui, sans-serif;
       max-width: 860px;
@@ -41,6 +46,17 @@
     }
 
     th { font-weight: 600; background: #f5f5f5; }
+
+    .tag-1, .tag-2, .tag-total {
+      display: inline-block;
+      padding: 0.05rem 0.35rem;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .tag-1 { border: 1px solid var(--color-1); color: var(--color-1); background: color-mix(in srgb, var(--color-1) 12%, white); }
+    .tag-2 { border: 1px solid var(--color-2); color: var(--color-2); background: color-mix(in srgb, var(--color-2) 12%, white); }
+    .tag-total { border: 1px solid #1a1a1a; }
 
     a { color: #2563eb; }
 
