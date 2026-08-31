@@ -1,6 +1,6 @@
 {
   "slug": "liars-dice",
-  "name": "Liar's Dice (1 die)",
+  "name": "Liar's Dice (1 die, 6 faces)",
   "algorithms": [],
   "payoff_range": {
     "min": -1.0,
