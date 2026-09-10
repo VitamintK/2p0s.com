@@ -1,0 +1,27 @@
+{
+  "slug": "liars-dice-2d3s",
+  "name": "Liar's Dice (2 dice, 3 faces)",
+  "algorithms": [],
+  "payoff_range": {
+    "min": -1.0,
+    "max": 1.0
+  },
+  "num_histories": {
+    "all": 663511,
+    "decision_terminal": 663471,
+    "decision": 331776
+  },
+  "info_states": {
+    "p1": 12288,
+    "p2": 12288,
+    "total": 24576
+  },
+  "nash_value": 0.06172839506172839,
+  "uniform_random": {
+    "ev_p0": 0.00925925925925926,
+    "ev_p1": -0.00925925925925926,
+    "exploitability": 0.738995932527311,
+    "ev_p0_vs_br": -0.7275747505428574,
+    "ev_p1_vs_br": -0.7504171145117645
+  }
+}
