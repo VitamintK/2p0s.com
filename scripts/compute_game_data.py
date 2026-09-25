@@ -123,4 +123,6 @@ if __name__ == "__main__":
     compute_and_save("kuhn_poker", "kuhn-poker")
     compute_and_save("leduc_poker", "leduc-poker")
     compute_and_save("liars_dice", "liars-dice")
+    compute_and_save("liars_dice(numdice=1,dice_sides=4)", "liars-dice-1d4s")
+    compute_and_save("liars_dice(numdice=1,dice_sides=5)", "liars-dice-1d5s")
     compute_and_save("liars_dice(numdice=2,dice_sides=3)", "liars-dice-2d3s")

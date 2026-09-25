@@ -1,0 +1,27 @@
+{
+  "slug": "liars-dice-1d5s",
+  "name": "Liar's Dice (1 die, 5 faces)",
+  "algorithms": [],
+  "payoff_range": {
+    "min": -1.0,
+    "max": 1.0
+  },
+  "num_histories": {
+    "all": 51181,
+    "decision_terminal": 51175,
+    "decision": 25600
+  },
+  "info_states": {
+    "p1": 2560,
+    "p2": 2560,
+    "total": 5120
+  },
+  "nash_value": 0.008,
+  "uniform_random": {
+    "ev_p0": -0.028,
+    "ev_p1": 0.028,
+    "exploitability": 0.7208708994708997,
+    "ev_p0_vs_br": -0.7000423280423281,
+    "ev_p1_vs_br": -0.7416994708994711
+  }
+}
