@@ -17,6 +17,7 @@
     "total": 24576
   },
   "nash_value": 0.06172839506172839,
+  "nash_value_sigfigs": 4,
   "uniform_random": {
     "ev_p0": 0.00925925925925926,
     "ev_p1": -0.00925925925925926,

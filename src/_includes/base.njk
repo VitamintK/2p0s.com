@@ -60,6 +60,35 @@
 
     a { color: #2563eb; }
 
+    .tooltip {
+      position: relative;
+      text-decoration: underline dotted var(--color-2);
+      text-underline-offset: 0.2em;
+      cursor: help;
+    }
+
+    .tooltip-body {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.4rem);
+      right: 0;
+      z-index: 10;
+      width: max-content;
+      max-width: min(18rem, calc(100vw - 2rem));
+      padding: 0.5rem 0.75rem;
+      background: #fff;
+      border: 1px solid #a2a9b1;
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      font-size: 0.875rem;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+      cursor: auto;
+    }
+
+    .tooltip:hover .tooltip-body,
+    .tooltip:focus .tooltip-body { display: block; }
+
     footer.credit {
       position: fixed;
       bottom: 0.75rem;

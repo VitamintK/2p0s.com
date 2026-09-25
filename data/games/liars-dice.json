@@ -12,6 +12,7 @@
     "decision": 147456
   },
   "nash_value": -0.027131782945736392,
+  "nash_value_sigfigs": 4,
   "uniform_random": {
     "ev_p0": -0.0324074074074074,
     "ev_p1": 0.0324074074074074,
