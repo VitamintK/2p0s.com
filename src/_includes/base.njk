@@ -4,6 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} — 2p0s</title>
+  <link rel="icon" id="favicon">
+  <script>
+    // Favicon: a random playing card from the 52-card deck, drawn fresh on each page load.
+    (function () {
+      var ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+      var suits = [["♠", "#1a1a1a"], ["♥", "#dc2626"], ["♦", "#dc2626"], ["♣", "#1a1a1a"]];
+      var rank = ranks[Math.floor(Math.random() * ranks.length)];
+      var suit = suits[Math.floor(Math.random() * suits.length)];
+
+      var canvas = document.createElement("canvas");
+      canvas.width = canvas.height = 64;
+      var ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      ctx.beginPath();
+      ctx.roundRect(9, 2, 46, 60, 7);
+      ctx.fillStyle = "#fff";
+      ctx.fill();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#1a1a1a";
+      ctx.stroke();
+
+      ctx.fillStyle = suit[1];
+      ctx.textAlign = "center";
+      ctx.textBaseline = "alphabetic";
+      ctx.font = "bold " + (rank === "10" ? 24 : 28) + "px system-ui, sans-serif";
+      ctx.fillText(rank, 32, 30);
+      // U+FE0E forces the text (non-emoji) glyph so the suit takes our fill color.
+      ctx.font = "30px system-ui, sans-serif";
+      ctx.fillText(suit[0] + "︎", 32, 57);
+
+      document.getElementById("favicon").href = canvas.toDataURL("image/png");
+    })();
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
 
