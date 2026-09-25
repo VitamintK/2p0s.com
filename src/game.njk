@@ -33,7 +33,7 @@ eleventyComputed:
       <td>Nash equilibrium value (P1)</td>
       <td>
         {% if game.nash_value_sigfigs %}
-        <span class="tooltip" tabindex="0" aria-describedby="nash-value-tip">{{ game.nash_value | sigfigs(game.nash_value_sigfigs) }}<span class="tooltip-body" role="tooltip" id="nash-value-tip">Value found using sequence-form LP, full floating point value: {{ game.nash_value }}</span></span>
+        <span class="tooltip" tabindex="0" aria-describedby="nash-value-tip">{{ game.nash_value | sigfigs(game.nash_value_sigfigs) }}<span class="tooltip-body" role="tooltip" id="nash-value-tip">Computed via sequence-form LP. Full floating-point value: {{ game.nash_value }}</span></span>
         {% else %}
         {{ game.nash_value if game.nash_value else "—" }}
         {% endif %}
