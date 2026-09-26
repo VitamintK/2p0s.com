@@ -74,7 +74,7 @@ eleventyComputed:
 
 {% if game.references and game.references.length %}
 <h2>References</h2>
-<ol>
+<ol class="references">
   {% for ref in game.references %}
   <li>{{ ref.text }}{% if ref.url %} <a href="{{ ref.url }}">{{ ref.url }}</a>{% endif %}</li>
   {% endfor %}
