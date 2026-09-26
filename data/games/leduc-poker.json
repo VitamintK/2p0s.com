@@ -2,6 +2,12 @@
   "slug": "leduc-poker",
   "name": "Leduc Poker",
   "description": "A poker game with a 6-card deck (J, Q, K in two suits), two rounds of betting, and a public community card revealed between rounds.",
+  "references": [
+    {
+      "text": "F. Southey, M. Bowling, B. Larson, C. Piccione, N. Burch, D. Billings, and C. Rayner. \"Bayes' Bluff: Opponent Modelling in Poker.\" In Proceedings of the 21st Conference on Uncertainty in Artificial Intelligence (UAI 2005), pp. 550–558.",
+      "url": "https://arxiv.org/abs/1207.1411"
+    }
+  ],
   "nash_value": -0.08560642407800051,
   "nash_value_sigfigs": 4,
   "algorithms": [],
