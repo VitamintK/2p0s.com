@@ -50,8 +50,9 @@ eleventyComputed:
     <tr><td>EV (P1)</td><td>{{ game.uniform_random.ev_p0 | round(6) }}</td></tr>
     {# <tr><td>EV (P2)</td><td>{{ game.uniform_random.ev_p1 | round(6) }}</td></tr> #}
     <tr><td>Exploitability</td><td>{{ game.uniform_random.exploitability | round(6) }}</td></tr>
-    <tr><td>EV vs. best response (P1)</td><td>{{ game.uniform_random.ev_p0_vs_br | round(6) }}</td></tr>
-    <tr><td>EV vs. best response (P2)</td><td>{{ game.uniform_random.ev_p1_vs_br | round(6) }}</td></tr>
+    {# Stored values are the uniform player's EV against a best response; BRV is the best responder's EV, so the sign flips. #}
+    <tr><td><span class="tooltip tooltip-left" tabindex="0" aria-describedby="brv-p1-tip">BRV (best-response value) of P1<span class="tooltip-body" role="tooltip" id="brv-p1-tip">The EV of a P2 best-response to the P1 policy</span></span></td><td>{{ (0 - game.uniform_random.ev_p0_vs_br) | round(6) }}</td></tr>
+    <tr><td><span class="tooltip tooltip-left" tabindex="0" aria-describedby="brv-p2-tip">BRV (best-response value) of P2<span class="tooltip-body" role="tooltip" id="brv-p2-tip">The EV of a P1 best-response to the P2 policy</span></span></td><td>{{ (0 - game.uniform_random.ev_p1_vs_br) | round(6) }}</td></tr>
   </tbody>
 </table>
 {% endif %}
